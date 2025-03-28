@@ -24,5 +24,5 @@ As you are going to run StarWorth in the PHP process context, using a limited we
 
 ![StarWorth in action #1](/SW_res/screenshot1.jpg)<br>
 
-Feedback: <a href="mailto:posta@elettronica.lol">posta@elettronica.lol</a>
+Feedback: <a href="mailto:code@gaox.io">code@gaox.io</a>
 
