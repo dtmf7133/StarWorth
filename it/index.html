@@ -98,9 +98,9 @@
 </head>
 <body>
 
-<div id="langhideit">
+<div id="langhideen">
    <br>
-   &nbsp;We have detected that you maybe speak Italian, do you want to be redirected to the italian site? <button onclick="$('#langhideit').hide();">NO</button>&nbsp;<button onclick="window.open('https://starworth.numode-foss.eu/it','_self');">OK</button>
+   &nbsp;We have detected that you maybe speak English, do you want to be redirected to the english site? <button onclick="$('#langhideen').hide();">NO</button>&nbsp;<button onclick="window.open('https://starworth.numode-foss.eu','_self');">OK</button>
    <br><br>
 </div>
 
@@ -145,29 +145,29 @@
         <span aria-hidden="true">&times;</span>
      </button>
 	
-	   Hello and welcome to StarWorth!<br><br>
-	   
-	   StarWorth is a light and simple software on premise to log projects and events.<br><br>
-	   
-	   StarWorth is released under GPLv3 license, it is supplied AS-IS and we do not take any responsibility for its misusage.<br><br>
-	   
-       StarWorth name comes from a prank on "StarWars" meaning our intention to make stars/projects "worth".<br><br>
-     
-	   First step, use the left side panel password and salt fields to create the hash to insert in the config file. Remember to manually set there also the salt value.<br><br>
-	   
-	   As you are going to run StarWorth in the PHP process context, using a limited web server or phpfpm user, you must follow some simple directives for an optimal first setup:<br>
-	   <ol>
-	   <li>Check the permissions of your "data" folder in your web app private path; and set its path in the config file.</li>
-	   <li>In the data path create a ".SW_history" and ".SW_captchahistory" files and give them the write permission.</li>
-     <li>Finish to setup the configuration file apporpriately, in the specific:</li>
-     <ul>
-       <li>Configure the APP_USE appropriately.</li>
-       <li>Configure the DISPLAY attributes as required.</li>
-       <li>Configure the max history and MAX_AGE items as required (default: 1000 and 3600).</li>	      
-	   </ul>
-     </ol>
+Ciao e benvenuto su StarWorth!<br><br> 
 
-      <br><br>
+StarWorth è un software on premise leggero e semplice per registrare progetti ed eventi.<br><br> 
+
+StarWorth è rilasciato sotto licenza GPLv3, viene fornito AS-IS e non ci assumiamo alcuna responsabilità per il suo utilizzo improprio.<br><br> 
+
+Il nome StarWorth deriva da uno scherzo su "StarWars", che indica la nostra intenzione di far sì che stelle/progetti "valgano qualcosa".<br><br> 
+
+Primo passaggio, utilizzare la password del pannello laterale sinistro e i campi salt per creare l'hash da inserire nel file di configurazione. Ricordati di impostare manualmente lì anche il valore del sale.<br><br> 
+
+Poiché eseguirai StarWorth nel contesto del processo PHP, utilizzando un server Web limitato o un utente phpfpm, devi seguire alcune semplici direttive per una prima configurazione ottimale:<br> 
+<ol> 
+<li>Verifica i permessi della tua cartella "dati" nel percorso privato della tua app web; e imposta il suo percorso nel file di configurazione.</li> 
+<li>Nel percorso dei dati crea un file ".SW_history" e ".SW_captchahistory" e concedi loro il permesso di scrittura.</li> 
+<li>Terminare di impostare opportunamente il file di configurazione, nello specifico:</li> 
+<ul> 
+<li>Configura APP_USE in modo appropriato.</li> 
+<li>Configura gli attributi DISPLAY come richiesto.</li> 
+<li>Configura la cronologia massima e gli elementi MAX_AGE come richiesto (impostazione predefinita: 1000 e 3600).</li> 
+</ul> 
+</ol>
+
+    <br><br>
 
 	  Screenshot:<br><br>
 
@@ -219,12 +219,12 @@ window.addEventListener("load", function() {
 </script>  
 
 <script>
-    function isItalian() {
+    function isEnglish() {
       ret = false;
       lang = window.navigator.language;
       lang = lang.toLowerCase();
       //alert(lang);
-      if (lang === "it" || lang === "it-it" || lang === "italian") {
+      if (lang === "en" || lang === "en-us" || lang === "en-gb" || lang === "english") {
         ret = true;
       }
       return ret;
@@ -240,8 +240,8 @@ window.addEventListener("load", function() {
       return ret;
     }
 
-    if (isItalian()) {
-      $("#langhideit").show();
+    if (isEnglish()) {
+      $("#langhideen").show();
     }
 
     if (isChinese()) {

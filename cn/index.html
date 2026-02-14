@@ -98,15 +98,15 @@
 </head>
 <body>
 
-<div id="langhideit">
+<div id="langhideen">
    <br>
-   &nbsp;We have detected that you maybe speak Italian, do you want to be redirected to the italian site? <button onclick="$('#langhideit').hide();">NO</button>&nbsp;<button onclick="window.open('https://starworth.numode-foss.eu/it','_self');">OK</button>
+   &nbsp;We have detected that you maybe speak English, do you want to be redirected to the english site? <button onclick="$('#langhideen').hide();">NO</button>&nbsp;<button onclick="window.open('https://starworth.numode-foss.eu','_self');">OK</button>
    <br><br>
 </div>
 
-<div id="langhidecn">
+<div id="langhideit">
    <br>
-   &nbsp;We have detected that you maybe speak Chinese, do you want to be redirected to the chinese site? <button onclick="$('#langhidecn').hide();">NO</button>&nbsp;<button onclick="window.open('https://starworth.numode-foss.eu/cn','_self');">OK</button>
+   &nbsp;We have detected that you maybe speak Italian, do you want to be redirected to the italian site? <button onclick="$('#langhideit').hide();">NO</button>&nbsp;<button onclick="window.open('https://starworth.numode-foss.eu/it','_self');">OK</button>
    <br><br>
 </div>
 
@@ -145,27 +145,27 @@
         <span aria-hidden="true">&times;</span>
      </button>
 	
-	   Hello and welcome to StarWorth!<br><br>
-	   
-	   StarWorth is a light and simple software on premise to log projects and events.<br><br>
-	   
-	   StarWorth is released under GPLv3 license, it is supplied AS-IS and we do not take any responsibility for its misusage.<br><br>
-	   
-       StarWorth name comes from a prank on "StarWars" meaning our intention to make stars/projects "worth".<br><br>
-     
-	   First step, use the left side panel password and salt fields to create the hash to insert in the config file. Remember to manually set there also the salt value.<br><br>
-	   
-	   As you are going to run StarWorth in the PHP process context, using a limited web server or phpfpm user, you must follow some simple directives for an optimal first setup:<br>
-	   <ol>
-	   <li>Check the permissions of your "data" folder in your web app private path; and set its path in the config file.</li>
-	   <li>In the data path create a ".SW_history" and ".SW_captchahistory" files and give them the write permission.</li>
-     <li>Finish to setup the configuration file apporpriately, in the specific:</li>
-     <ul>
-       <li>Configure the APP_USE appropriately.</li>
-       <li>Configure the DISPLAY attributes as required.</li>
-       <li>Configure the max history and MAX_AGE items as required (default: 1000 and 3600).</li>	      
-	   </ul>
-     </ol>
+ 您好，欢迎来到 StarWorth！<br><br>
+
+ StarWorth 是一款轻量且简单的软件，用于记录项目和事件。<br><br>
+
+ StarWorth 根据 GPLv3 许可证发布，按原样提供，我们对其误用不承担任何责任。<br><br>
+
+ StarWorth 的名字来自“星球大战”的一个恶作剧，意思是我们想让明星/项目“有价值”。<br><br>
+
+ 第一步，使用左侧面板密码和盐字段创建要插入配置文件中的哈希值。请记住手动设置盐值。<br><br>
+
+ 当您要使用有限的 Web 服务器或 phpfpm 用户在 PHP 进程上下文中运行 StarWorth 时，您必须遵循一些简单的指令以获得最佳的首次设置：<br>
+ <ol>
+ <li>检查网络应用专用路径中“数据”文件夹的权限；并在配置文件中设置其路径。</li>
+ <li>在数据路径中创建“.SW_history”和“.SW_captchahistory”文件并授予它们写入权限。</li>
+ <li>完成配置文件的相应设置，具体为：</li>
+ <ul>
+ <li>适当配置 APP_USE。</li>
+ <li>根据需要配置 DISPLAY 属性。</li>
+ <li>根据需要配置最大历史记录和 MAX_AGE 项目（默认值：1000 和 3600）。</li>
+ </ul>
+ </ol>
 
       <br><br>
 
@@ -230,11 +230,11 @@ window.addEventListener("load", function() {
       return ret;
     }
 
-    function isChinese() {
+    function isEnglish() {
       ret = false;
       lang = window.navigator.language;
       lang = lang.toLowerCase();
-      if (lang === "cn" || lang === "zh-cn" || lang === "chinese" || lang === "chinese simplified" || lang === "mandarin") {
+      if (lang === "en" || lang === "en-us" || lang === "en-gb" || lang === "english") {
         ret = true;
       }
       return ret;
@@ -244,8 +244,8 @@ window.addEventListener("load", function() {
       $("#langhideit").show();
     }
 
-    if (isChinese()) {
-      $("#langhidecn").show();
+    if (isEnglish()) {
+      $("#langhideen").show();
     }
 </script>
 
